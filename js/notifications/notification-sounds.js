@@ -1,0 +1,1 @@
+window.CalanderNotificationSounds = {enabled:true,setEnabled(v){this.enabled=Boolean(v)}};

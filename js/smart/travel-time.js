@@ -1,0 +1,1 @@
+window.CalanderTravelTime = {estimate(minutes=30){return {minutes,buffer:Math.ceil(minutes*1.25)}}};

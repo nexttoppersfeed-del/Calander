@@ -1,0 +1,22 @@
+{
+  "country": "India",
+  "fixed": [
+    {
+      "date": "01-26",
+      "name": "Republic Day"
+    },
+    {
+      "date": "08-15",
+      "name": "Independence Day"
+    },
+    {
+      "date": "10-02",
+      "name": "Gandhi Jayanti"
+    },
+    {
+      "date": "12-25",
+      "name": "Christmas"
+    }
+  ],
+  "note": "Movable Indian festivals are planned for the dedicated festival data module."
+}

@@ -1,0 +1,1 @@
+window.CalanderComfortableView = {enabled:true};

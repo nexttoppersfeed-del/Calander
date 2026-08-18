@@ -1,0 +1,1 @@
+window.CalanderAmoledTheme = {name:"amoled"};

@@ -1,0 +1,1 @@
+window.CalanderContextMenu = {show(x,y,items=[]){document.dispatchEvent(new CustomEvent("calander:contextmenu",{detail:{x,y,items}}))}};

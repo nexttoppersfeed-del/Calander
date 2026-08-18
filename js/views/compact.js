@@ -1,0 +1,1 @@
+window.CalanderCompactView = {enabled:false};

@@ -1,0 +1,1 @@
+window.CalanderAppearanceSettings = {theme:"dark",accent:"#9d6cff",glassIntensity:1,animationSpeed:1};

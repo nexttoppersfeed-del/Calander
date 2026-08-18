@@ -1,0 +1,1 @@
+window.CalanderMonthWidget = {render(target,date){if(target)target.textContent=date.toLocaleDateString("en-IN",{month:"long",year:"numeric"})}};

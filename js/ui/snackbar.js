@@ -1,0 +1,1 @@
+window.CalanderSnackbar = {show(message){const e=document.getElementById("toast");if(e){e.textContent=message;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),2200)}}};

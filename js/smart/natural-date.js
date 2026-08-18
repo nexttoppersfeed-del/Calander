@@ -1,0 +1,1 @@
+window.CalanderNaturalDate = {resolve(word,base=new Date()){const d=new Date(base);if(word==="tomorrow")d.setDate(d.getDate()+1);if(word==="yesterday")d.setDate(d.getDate()-1);return d}};

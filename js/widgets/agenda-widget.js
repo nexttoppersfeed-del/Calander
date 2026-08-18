@@ -1,0 +1,1 @@
+window.CalanderAgendaWidget = {render(target,events){if(target)target.textContent=`${events?.length||0} upcoming events`}};

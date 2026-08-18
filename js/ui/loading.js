@@ -1,0 +1,1 @@
+window.CalanderLoading = {show(){document.body.classList.add("loading")},hide(){document.body.classList.remove("loading")}};

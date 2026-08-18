@@ -1,0 +1,1 @@
+window.CalanderSharedElements = {animate(element){element?.animate([{transform:"scale(.96)",opacity:.4},{transform:"scale(1)",opacity:1}],{duration:400,easing:"cubic-bezier(.22,1,.36,1)"})}};

@@ -1,0 +1,1 @@
+window.CalanderCSV = {events(events){return ["title,date,time,category",...events.map(e=>[e.title,e.date,e.time,e.category].map(x=>`"${String(x||"").replaceAll('"','""')}"`).join(","))].join("\n")}};

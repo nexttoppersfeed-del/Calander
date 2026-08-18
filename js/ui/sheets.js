@@ -1,0 +1,1 @@
+window.CalanderSheets = {open(id){document.getElementById(id)?.classList.add("show")},closeAll(){document.querySelectorAll(".sheet").forEach(x=>x.classList.remove("show"))}};

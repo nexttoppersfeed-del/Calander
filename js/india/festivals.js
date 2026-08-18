@@ -1,0 +1,1 @@
+window.CalanderIndiaFestivals = {get(date){const data=CalanderStorage.load("india-festivals-runtime",window.CALANDER_INDIA_FESTIVALS||{});const k=`${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;return data[k]||null}};

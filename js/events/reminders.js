@@ -1,0 +1,1 @@
+window.CalanderReminders = {schedule(event){if(!event.reminder)return;const t=new Date(event.date+"T"+(event.time||"09:00")+":00").getTime()-event.reminder*60000;if(t>Date.now())setTimeout(()=>CalanderNotifications?.notify(event.title,event.meta||"Calendar reminder"),t-Date.now())}};

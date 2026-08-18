@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050b18">
+  <meta name="description" content="Calander — liquid glass calendar">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <title>Calander</title>
+</head>
+<body>
+  <div class="aurora" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+    <span class="orb orb-4"></span>
+    <span class="stars"></span>
+  </div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <button class="icon-button glass" id="menuButton" aria-label="Menu">
+        <span class="hamburger"><i></i><i></i><i></i></span>
+      </button>
+
+      <div class="brand">CALENDAR<span></span></div>
+
+      <button class="icon-button glass" id="searchButton" aria-label="Search">
+        <span class="magnify"></span>
+      </button>
+    </header>
+
+    <section class="hero">
+      <button class="day-arrow glass" id="prevDay" aria-label="Previous day">‹</button>
+
+      <div class="hero-center">
+        <div class="weekday" id="weekday">TUESDAY</div>
+        <div class="hero-date" id="heroDate">18</div>
+        <div class="hero-month" id="heroMonth">AUGUST 2026</div>
+
+        <div class="festival-pill glass hidden" id="festivalPill">
+          <span>✦</span><b id="festivalText"></b>
+        </div>
+      </div>
+
+      <button class="day-arrow glass" id="nextDay" aria-label="Next day">›</button>
+    </section>
+
+    <div class="today-row">
+      <button class="today-pill glass" id="todayButton">
+        <span class="mini-calendar"></span>
+        <b>Today</b>
+        <span class="today-dot"></span>
+      </button>
+    </div>
+
+    <section class="panel events-panel glass">
+      <div class="panel-heading">
+        <div class="section-label">UPCOMING EVENTS</div>
+        <button class="view-all" id="viewAllEvents">View All <span>›</span></button>
+      </div>
+      <div class="events-list" id="eventsList"></div>
+    </section>
+
+    <section class="panel extra-panel glass">
+      <div class="panel-heading"><div class="section-label">AGENDA</div><button class="view-all" onclick="document.querySelector('[data-tab=agenda]').click()">Open <span>›</span></button></div>
+      <div id="agendaExtra"></div>
+    </section>
+
+    <section class="panel extra-panel glass">
+      <div class="panel-heading"><div class="section-label">QUICK NOTES</div><button class="view-all" onclick="toast('Notes can be added from the next module')">+</button></div>
+      <div id="notesList"><div class="empty-extra">No notes yet.</div></div>
+    </section>
+
+    <section class="panel month-panel glass">
+      <div class="month-heading">
+        <h2 id="monthTitle">AUGUST 2026</h2>
+        <button id="nextMonth" aria-label="Next month">›</button>
+      </div>
+
+      <div class="weekdays">
+        <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span>
+        <span>THU</span><span>FRI</span><span>SAT</span>
+      </div>
+
+      <div class="month-grid" id="monthGrid"></div>
+    </section>
+
+    <button class="fab" id="fab" aria-label="Create event">+</button>
+
+    <nav class="bottom-nav glass">
+      <button class="nav-item active" data-tab="today">
+        <span class="nav-glow"></span><span class="nav-icon sun-icon">✦</span><span>Today</span>
+      </button>
+      <button class="nav-item" data-tab="calendar">
+        <span class="nav-icon calendar-icon"></span><span>Calendar</span>
+      </button>
+      <button class="nav-item" data-tab="agenda">
+        <span class="nav-icon agenda-icon"><i></i><i></i><i></i></span><span>Agenda</span>
+      </button>
+      <button class="nav-item" data-tab="settings">
+        <span class="nav-icon gear-icon">⚙</span><span>Settings</span>
+      </button>
+    </nav>
+  </main>
+
+  <div class="scrim" id="scrim"></div>
+
+  <section class="sheet glass" id="eventSheet" aria-hidden="true">
+    <div class="handle"></div>
+    <div class="sheet-title-row">
+      <div><small>CREATE</small><h2>New Event</h2></div>
+      <button class="close-button" id="closeEvent">×</button>
+    </div>
+    <label>Event name<input id="eventName" placeholder="What's happening?"></label>
+    <div class="two-col">
+      <label>Date<input id="eventDate" type="date"></label>
+      <label>Start<input id="eventTime" type="time"></label>
+    </div>
+    <label>End time<input id="eventEnd" type="time"></label>
+    <label>Repeat
+      <select id="eventRepeat"><option>Never</option><option>Daily</option><option>Weekly</option><option>Monthly</option><option>Yearly</option></select>
+    </label>
+    <label>Reminder
+      <select id="eventReminder"><option value="0">No reminder</option><option value="5">5 minutes before</option><option value="10">10 minutes before</option><option value="15">15 minutes before</option><option value="30">30 minutes before</option><option value="60">1 hour before</option><option value="1440">1 day before</option></select>
+    </label>
+    <label>Color
+      <div class="color-row" id="colorRow">
+        <button data-color="#9d6cff" class="selected"></button>
+        <button data-color="#35d8a0"></button>
+        <button data-color="#ff9c24"></button>
+        <button data-color="#4385ff"></button>
+        <button data-color="#ff4ea3"></button>
+      </div>
+    </label>
+    <label>Category
+      <select id="eventCategory">
+        <option>Personal</option><option>Work</option><option>Family</option><option>Study</option><option>Birthday</option>
+      </select>
+    </label>
+    <button class="primary-button" id="saveEvent">Create Event</button>
+  </section>
+
+  <section class="sheet glass" id="settingsSheet" aria-hidden="true">
+    <div class="handle"></div>
+    <div class="sheet-title-row">
+      <div><small>CALANDER</small><h2>Settings</h2></div>
+      <button class="close-button" id="closeSettings">×</button>
+    </div>
+    <button class="primary-button" id="openFeatures" style="margin-bottom:14px">More Features</button>
+    <div class="setting-list">
+      <button class="setting-row" id="motionSetting"><span><b>Smooth Motion</b><small>HyperOS-style transitions</small></span><i class="toggle on"></i></button>
+      <button class="setting-row" id="backgroundSetting"><span><b>Liquid Background</b><small>Animated gradient aurora</small></span><i class="toggle on"></i></button>
+      <button class="setting-row" id="notificationSetting"><span><b>Notifications</b><small>Event reminders</small></span><i class="toggle on"></i></button>
+    </div>
+  </section>
+
+  <section class="sheet month-sheet glass" id="calendarSheet" aria-hidden="true">
+    <div class="handle"></div>
+    <div class="sheet-title-row">
+      <div><small>CALENDAR</small><h2>Month View</h2></div>
+      <button class="close-button" id="closeCalendar">×</button>
+    </div>
+    <div class="large-calendar" id="largeCalendar"></div>
+  </section>
+
+  <section class="search-overlay" id="searchOverlay" aria-hidden="true">
+    <div class="search-head">
+      <button class="close-button" id="closeSearch">×</button>
+      <h2>Search</h2>
+    </div>
+    <div class="search-box glass"><span class="magnify"></span><input id="searchInput" placeholder="Events, festivals, holidays..."></div>
+    <div id="searchResults"></div>
+  </section>
+
+  
+  <section class="sheet glass features-sheet" id="featuresSheet" aria-hidden="true">
+    <div class="handle"></div>
+    <div class="sheet-title-row">
+      <div><small>POWER TOOLS</small><h2>More Features</h2></div>
+      <button class="close-button" id="closeFeatures">×</button>
+    </div>
+
+    <div class="feature-grid">
+      <button class="feature-tile glass" id="openTasks"><strong>✓</strong><span>Tasks</span><small>To-do list</small></button>
+      <button class="feature-tile glass" id="openWeek"><strong>▦</strong><span>Week View</span><small>7-day schedule</small></button>
+      <button class="feature-tile glass" id="openDay"><strong>☰</strong><span>Day View</span><small>24-hour timeline</small></button>
+      <button class="feature-tile glass" id="countdownButton"><strong>◷</strong><span>Countdown</span><small>Days to event</small></button>
+      <button class="feature-tile glass" id="exportBackup"><strong>⇩</strong><span>Backup</span><small>Export JSON</small></button>
+      <button class="feature-tile glass" id="importBackup"><strong>⇧</strong><span>Restore</span><small>Import JSON</small></button>
+      <button class="feature-tile glass" id="timezoneButton"><strong>◉</strong><span>Time Zone</span><small>World clock</small></button>
+      <button class="feature-tile glass" id="focusButton"><strong>◎</strong><span>Focus Time</span><small>Deep work</small></button>
+    </div>
+    <input id="backupFile" type="file" accept="application/json" hidden>
+  </section>
+
+  <section class="sheet glass features-sheet" id="tasksSheet" aria-hidden="true">
+    <div class="handle"></div>
+    <div class="sheet-title-row">
+      <div><small>PRODUCTIVITY</small><h2>Tasks</h2></div>
+      <button class="close-button" id="closeTasks">×</button>
+    </div>
+    <div class="task-add-row">
+      <input id="taskInput" placeholder="Add a task...">
+      <button class="primary-mini" id="addTask">+</button>
+    </div>
+    <div id="taskList"></div>
+  </section>
+
+  <section class="sheet glass features-sheet" id="viewSheet" aria-hidden="true">
+    <div class="handle"></div>
+    <div class="sheet-title-row">
+      <div><small id="viewModeLabel">SCHEDULE</small><h2 id="viewTitle">Week View</h2></div>
+      <button class="close-button" id="closeView">×</button>
+    </div>
+    <div id="timelineView"></div>
+  </section>
+
+  <div class="toast glass" id="toast"></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/ics.js"></script>
+  <script src="js/reminders.js"></script>
+  <script src="js/recurrence.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/backup.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/views.js"></script>
+    <script src="js/core/state.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/core/router.js"></script>
+  <script src="js/core/lifecycle.js"></script>
+  <script src="js/core/permissions.js"></script>
+  <script src="js/core/device.js"></script>
+  <script src="js/calendar/day.js"></script>
+  <script src="js/calendar/three-day.js"></script>
+  <script src="js/calendar/week.js"></script>
+  <script src="js/calendar/month.js"></script>
+  <script src="js/calendar/year.js"></script>
+  <script src="js/calendar/agenda.js"></script>
+  <script src="js/calendar/timeline.js"></script>
+  <script src="js/calendar/week-numbers.js"></script>
+  <script src="js/events/events.js"></script>
+  <script src="js/events/event-editor.js"></script>
+  <script src="js/events/recurrence.js"></script>
+  <script src="js/events/reminders.js"></script>
+  <script src="js/events/attendees.js"></script>
+  <script src="js/events/locations.js"></script>
+  <script src="js/events/attachments.js"></script>
+  <script src="js/events/categories.js"></script>
+  <script src="js/events/conflicts.js"></script>
+  <script src="js/events/free-busy.js"></script>
+  <script src="js/events/event-status.js"></script>
+  <script src="js/productivity/tasks.js"></script>
+  <script src="js/productivity/priorities.js"></script>
+  <script src="js/productivity/focus.js"></script>
+  <script src="js/productivity/pomodoro.js"></script>
+  <script src="js/productivity/countdown.js"></script>
+  <script src="js/productivity/daily-plan.js"></script>
+  <script src="js/productivity/streaks.js"></script>
+  <script src="js/india/festivals.js"></script>
+  <script src="js/india/holidays.js"></script>
+  <script src="js/india/regional.js"></script>
+  <script src="js/india/lunar.js"></script>
+  <script src="js/india/school-calendar.js"></script>
+  <script src="js/smart/search.js"></script>
+  <script src="js/smart/quick-add.js"></script>
+  <script src="js/smart/natural-date.js"></script>
+  <script src="js/smart/conflict-detection.js"></script>
+  <script src="js/smart/suggestions.js"></script>
+  <script src="js/smart/timezone.js"></script>
+  <script src="js/smart/travel-time.js"></script>
+  <script src="js/notifications/notifications.js"></script>
+  <script src="js/notifications/reminder-engine.js"></script>
+  <script src="js/notifications/notification-sounds.js"></script>
+  <script src="js/notifications/quiet-hours.js"></script>
+  <script src="js/views/view-manager.js"></script>
+  <script src="js/views/compact.js"></script>
+  <script src="js/views/comfortable.js"></script>
+  <script src="js/views/fullscreen.js"></script>
+  <script src="js/ui/sheets.js"></script>
+  <script src="js/ui/dialogs.js"></script>
+  <script src="js/ui/bottom-nav.js"></script>
+  <script src="js/ui/fab.js"></script>
+  <script src="js/ui/context-menu.js"></script>
+  <script src="js/ui/snackbar.js"></script>
+  <script src="js/ui/loading.js"></script>
+  <script src="js/ui/empty-states.js"></script>
+  <script src="js/ui/tooltips.js"></script>
+  <script src="js/animations/liquid-glass.js"></script>
+  <script src="js/animations/page-transitions.js"></script>
+  <script src="js/animations/shared-elements.js"></script>
+  <script src="js/animations/spring.js"></script>
+  <script src="js/animations/gestures.js"></script>
+  <script src="js/animations/haptics.js"></script>
+  <script src="js/themes/theme-manager.js"></script>
+  <script src="js/themes/dark.js"></script>
+  <script src="js/themes/light.js"></script>
+  <script src="js/themes/amoled.js"></script>
+  <script src="js/themes/gradients.js"></script>
+  <script src="js/themes/custom.js"></script>
+  <script src="js/data/backup.js"></script>
+  <script src="js/data/restore.js"></script>
+  <script src="js/data/import-ics.js"></script>
+  <script src="js/data/export-ics.js"></script>
+  <script src="js/data/csv.js"></script>
+  <script src="js/data/migration.js"></script>
+  <script src="js/world/world-clock.js"></script>
+  <script src="js/world/timezones.js"></script>
+  <script src="js/world/alternate-calendars.js"></script>
+  <script src="js/world/international-holidays.js"></script>
+  <script src="js/weather/weather.js"></script>
+  <script src="js/weather/event-weather.js"></script>
+  <script src="js/weather/forecast.js"></script>
+  <script src="js/widgets/today-widget.js"></script>
+  <script src="js/widgets/countdown-widget.js"></script>
+  <script src="js/widgets/agenda-widget.js"></script>
+  <script src="js/widgets/month-widget.js"></script>
+  <script src="js/settings/settings.js"></script>
+  <script src="js/settings/calendar-settings.js"></script>
+  <script src="js/settings/event-settings.js"></script>
+  <script src="js/settings/notification-settings.js"></script>
+  <script src="js/settings/appearance-settings.js"></script>
+  <script src="js/settings/privacy-settings.js"></script>
+  <script src="js/settings/backup-settings.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

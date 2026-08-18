@@ -1,0 +1,1 @@
+window.CalanderPageTransitions = {go(fn){document.body.animate([{opacity:.75,transform:"scale(.99)"},{opacity:1,transform:"scale(1)"}],{duration:360,easing:"cubic-bezier(.22,1,.36,1)"});fn?.()}};

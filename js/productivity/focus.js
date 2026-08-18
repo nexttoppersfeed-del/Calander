@@ -1,0 +1,1 @@
+window.CalanderFocus = {start(minutes=25){const until=Date.now()+minutes*60000;localStorage.setItem("calander-focus",String(until));return until},remaining(){return Math.max(0,Number(localStorage.getItem("calander-focus")||0)-Date.now())}};

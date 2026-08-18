@@ -1,0 +1,14 @@
+{
+  "themes": [
+    "dark",
+    "light",
+    "amoled"
+  ],
+  "gradients": [
+    "violet-blue",
+    "aurora",
+    "sunset",
+    "ocean",
+    "emerald"
+  ]
+}

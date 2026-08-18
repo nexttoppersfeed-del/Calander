@@ -1,0 +1,1 @@
+window.CalanderCountdown = {daysUntil(date){return Math.ceil((new Date(date+"T00:00:00")-new Date(new Date().toDateString()))/86400000)},text(date,title){const d=this.daysUntil(date);return d===0?`${title} is today`:d>0?`${d} days until ${title}`:`${title} was ${Math.abs(d)} days ago`}};

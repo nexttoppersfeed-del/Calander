@@ -1,0 +1,1 @@
+window.CalanderTimezone = {format(date,zone){return new Intl.DateTimeFormat("en-IN",{timeZone:zone,dateStyle:"medium",timeStyle:"short"}).format(date)},zones:["Asia/Kolkata","Europe/London","America/New_York","Asia/Tokyo"]};

@@ -1,0 +1,1 @@
+window.CalanderBottomNav = {setActive(tab){document.querySelectorAll(".nav-item").forEach(x=>x.classList.toggle("active",x.dataset.tab===tab))}};

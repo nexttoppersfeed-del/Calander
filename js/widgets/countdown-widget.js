@@ -1,0 +1,1 @@
+window.CalanderCountdownWidget = {render(target,date,title){if(target)target.textContent=CalanderCountdown.text(date,title)}};

@@ -1,0 +1,1 @@
+window.CalanderQuietHours = {enabled:false,start:"22:00",end:"07:00",isQuiet(date=new Date()){return false}};

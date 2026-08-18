@@ -1,0 +1,11 @@
+{
+  "name": "Calander \u2014 Liquid Glass Calendar",
+  "short_name": "Calander",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#050b18",
+  "background_color": "#040914",
+  "lang": "en-IN",
+  "description": "A premium liquid glass calendar."
+}

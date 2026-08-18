@@ -1,0 +1,1 @@
+window.CalanderSettings = {get(key,fallback){return CalanderStorage.load("setting-"+key,fallback)},set(key,value){CalanderStorage.save("setting-"+key,value)}};

@@ -1,0 +1,1 @@
+window.CalanderMigration = {version:1,run(){localStorage.setItem("calander-schema-version",String(this.version))}};

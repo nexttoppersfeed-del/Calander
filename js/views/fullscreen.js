@@ -1,0 +1,1 @@
+window.CalanderFullscreen = {async toggle(){if(!document.fullscreenElement)return document.documentElement.requestFullscreen?.();return document.exitFullscreen?.()}};

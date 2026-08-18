@@ -1,0 +1,1 @@
+window.CalanderStreaks = {calculate(completedDates=[]){const s=new Set(completedDates);let d=new Date(),count=0;while(s.has(d.toISOString().slice(0,10))){count++;d.setDate(d.getDate()-1)}return count}};

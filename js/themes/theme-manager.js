@@ -1,0 +1,1 @@
+window.CalanderThemes = {set(name){document.documentElement.dataset.theme=name;localStorage.setItem("calander-theme",name)},get(){return localStorage.getItem("calander-theme")||"dark"}};

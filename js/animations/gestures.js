@@ -1,0 +1,1 @@
+window.CalanderGestures = {swipe(element,left,right){let x=0;element?.addEventListener("touchstart",e=>x=e.changedTouches[0].clientX,{passive:true});element?.addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-x;if(Math.abs(dx)>50)(dx<0?left:right)?.()},{passive:true})}};

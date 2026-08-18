@@ -1,0 +1,1 @@
+window.CalanderICSImport = {parse(text){return text.split("BEGIN:VEVENT").slice(1).map(x=>({title:(x.match(/SUMMARY:(.*)/)||[])[1]||"Imported event"}))}};

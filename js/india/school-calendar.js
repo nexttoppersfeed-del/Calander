@@ -1,0 +1,1 @@
+window.CalanderSchoolCalendar = {load(){return CalanderStorage.load("school-calendar",[])}};

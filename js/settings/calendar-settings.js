@@ -1,0 +1,1 @@
+window.CalanderCalendarSettings = {weekStart:0,showWeekNumbers:false,defaultView:"month"};

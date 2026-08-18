@@ -1,0 +1,1 @@
+window.CalanderIndiaRegional = {states:["UP","Delhi","Maharashtra","Rajasthan","Gujarat","West Bengal","Tamil Nadu","Karnataka","Kerala","Bihar"]};

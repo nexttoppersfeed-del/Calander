@@ -1,0 +1,1 @@
+window.CalanderTooltips = {init(){document.querySelectorAll("[aria-label]").forEach(e=>e.title=e.getAttribute("aria-label"))}};

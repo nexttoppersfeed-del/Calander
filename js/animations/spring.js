@@ -1,0 +1,1 @@
+window.CalanderSpring = {duration:500,easing:"cubic-bezier(.16,1.2,.3,1)"};

@@ -1,0 +1,1 @@
+window.CalanderRestore = {read(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>{try{resolve(JSON.parse(r.result))}catch(e){reject(e)}};r.readAsText(file)})}};

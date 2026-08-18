@@ -1,0 +1,1 @@
+window.CalanderNotifications = {async request(){if(!("Notification"in window))return"unsupported";return Notification.permission==="default"?await Notification.requestPermission():Notification.permission},notify(title,body){if(Notification?.permission==="granted")try{new Notification(title,{body})}catch{}}};

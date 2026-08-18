@@ -1,0 +1,1 @@
+window.CalanderQuickAdd = {parse(text){const m=text.match(/(.+?)\s+(today|tomorrow)\s+(\d{1,2})(?::(\d{2}))?\s*(am|pm)?/i);return m?{title:m[1].trim(),day:m[2].toLowerCase(),hour:Number(m[3]),minute:Number(m[4]||0),period:(m[5]||"").toLowerCase()}:null}};

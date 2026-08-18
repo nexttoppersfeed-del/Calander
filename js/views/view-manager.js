@@ -1,0 +1,1 @@
+window.CalanderViewManager = {views:["today","day","three-day","week","month","agenda","year"],current:"today",set(v){if(this.views.includes(v))this.current=v;document.dispatchEvent(new CustomEvent("calander:view",{detail:v}))}};

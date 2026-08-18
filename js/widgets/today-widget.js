@@ -1,0 +1,1 @@
+window.CalanderTodayWidget = {render(target){if(target)target.textContent=new Date().toLocaleDateString("en-IN",{weekday:"long",day:"numeric",month:"long"})}};

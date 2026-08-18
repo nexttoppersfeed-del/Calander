@@ -1,0 +1,1 @@
+window.CalanderFAB = {open(){document.getElementById("fab")?.classList.add("open")},close(){document.getElementById("fab")?.classList.remove("open")}};

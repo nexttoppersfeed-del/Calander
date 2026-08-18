@@ -1,0 +1,1 @@
+window.CalanderSuggestions = {forEvent(event){return event?.category==="Work"?["Add 15-minute reminder","Add meeting location"]:["Add reminder","Add category"]}};

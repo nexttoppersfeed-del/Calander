@@ -1,0 +1,1 @@
+window.CalanderDialogs = {confirm(message){return Promise.resolve(window.confirm(message))}};

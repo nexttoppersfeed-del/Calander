@@ -1,0 +1,1 @@
+window.CalanderWeekView = {dates(date){const d=new Date(date),start=new Date(d);start.setDate(d.getDate()-d.getDay());return Array.from({length:7},(_,i)=>{const x=new Date(start);x.setDate(start.getDate()+i);return x})}};

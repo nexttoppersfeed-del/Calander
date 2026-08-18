@@ -1,0 +1,25 @@
+{
+  "weekStart": "Sunday",
+  "alternateCalendars": [
+    "Gregorian",
+    "Hijri",
+    "Buddhist",
+    "Hebrew",
+    "Chinese"
+  ],
+  "views": [
+    "Day",
+    "Week",
+    "Month",
+    "Agenda",
+    "Year"
+  ],
+  "defaultReminderMinutes": 15,
+  "timeZones": [
+    "Asia/Kolkata",
+    "UTC",
+    "Europe/London",
+    "America/New_York",
+    "Asia/Tokyo"
+  ]
+}

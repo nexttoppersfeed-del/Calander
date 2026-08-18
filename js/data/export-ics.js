@@ -1,0 +1,1 @@
+window.CalanderICSExport = {event(e){const text=`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nSUMMARY:${e.title}\r\nDTSTART:${String(e.date).replaceAll("-","")}T${String(e.time||"0900").replace(":","")}00\r\nEND:VEVENT\r\nEND:VCALENDAR`;const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text],{type:"text/calendar"}));a.download="event.ics";a.click()}};

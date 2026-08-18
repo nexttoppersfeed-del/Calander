@@ -1,0 +1,1 @@
+window.CalanderNotificationSettings = {enabled:true,quietHours:false};

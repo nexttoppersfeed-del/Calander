@@ -1,0 +1,1 @@
+window.CalanderConflictDetection = {check(event,events){return CalanderConflicts.find(event,events)}};

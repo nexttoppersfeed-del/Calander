@@ -1,0 +1,1 @@
+window.CalanderTimezones = {common:["Asia/Kolkata","UTC","Europe/London","America/New_York","America/Los_Angeles","Asia/Tokyo","Australia/Sydney"]};

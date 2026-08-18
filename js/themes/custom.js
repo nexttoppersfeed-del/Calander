@@ -1,0 +1,1 @@
+window.CalanderCustomTheme = {save(colors){CalanderStorage.save("custom-theme",colors)}};

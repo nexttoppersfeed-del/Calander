@@ -1,0 +1,1 @@
+window.CalanderPrivacySettings = {localOnly:true,analytics:false};

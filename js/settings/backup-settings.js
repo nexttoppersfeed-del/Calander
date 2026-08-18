@@ -1,0 +1,1 @@
+window.CalanderBackupSettings = {autoBackup:false,interval:"weekly"};

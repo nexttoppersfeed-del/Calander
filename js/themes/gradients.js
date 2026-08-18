@@ -1,0 +1,1 @@
+window.CalanderGradients = {presets:["violet-blue","aurora","sunset","ocean","emerald"]};

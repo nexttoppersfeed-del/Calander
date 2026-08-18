@@ -1,0 +1,1 @@
+window.CalanderWeather = {enabled:false,async get(){return null}};

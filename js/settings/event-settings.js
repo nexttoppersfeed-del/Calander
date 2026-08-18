@@ -1,0 +1,1 @@
+window.CalanderEventSettings = {defaultDuration:60,defaultReminder:15};

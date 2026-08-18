@@ -1,0 +1,1 @@
+window.CalanderWorldClock = {now(zone){return new Intl.DateTimeFormat("en-IN",{timeZone:zone,dateStyle:"medium",timeStyle:"medium"}).format(new Date())}};

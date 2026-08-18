@@ -1,0 +1,1 @@
+window.CalanderTasks = {load(){return CalanderStorage.load("calander-tasks",[])},save(x){CalanderStorage.save("calander-tasks",x)},add(title,due){const x=this.load();x.push({id:Date.now(),title,due,done:false});this.save(x);return x},toggle(id){const x=this.load();const t=x.find(v=>v.id===id);if(t)t.done=!t.done;this.save(x);return x}};

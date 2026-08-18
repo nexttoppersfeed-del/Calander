@@ -1,0 +1,1 @@
+window.CalanderLiquidGlass = {refresh(){document.documentElement.style.setProperty("--glass-refresh",Date.now())}};

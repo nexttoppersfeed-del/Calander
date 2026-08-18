@@ -1,0 +1,1 @@
+window.CalanderAlternateCalendars = {supported:["Gregorian","Hijri","Buddhist","Hebrew","Chinese"],enabled:[]};

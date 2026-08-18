@@ -1,0 +1,1 @@
+window.CalanderIndiaHolidays = {forState(state,year){return CalanderStorage.load(`holidays-${state}-${year}`,[])}};

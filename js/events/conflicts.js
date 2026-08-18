@@ -1,0 +1,1 @@
+window.CalanderConflicts = {overlap(a,b){if(a.date!==b.date)return false;const s=x=>Number((x||"00:00").replace(":","."));return s(a.time)<s(b.end||b.time)&&s(b.time)<s(a.end||a.time)},find(event,events){return events.filter(e=>e.id!==event.id&&this.overlap(event,e))}};

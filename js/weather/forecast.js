@@ -1,0 +1,1 @@
+window.CalanderForecast = {days:7};

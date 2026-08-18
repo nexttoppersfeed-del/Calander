@@ -1,0 +1,1 @@
+window.CalanderEmptyStates = {calendar:"Nothing planned yet",tasks:"No tasks yet",agenda:"No upcoming events"};

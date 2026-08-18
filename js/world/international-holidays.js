@@ -1,0 +1,1 @@
+window.CalanderInternationalHolidays = {countries:["IN","US","GB","JP","AU","CA","DE","FR"]};

@@ -1,0 +1,1 @@
+window.CalanderSearch = {events(query,events){const q=query.toLowerCase();return events.filter(e=>String(e.title||"").toLowerCase().includes(q))}};
